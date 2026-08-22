@@ -13,7 +13,7 @@ function App() {
       {/* Nav bar */}
       <Nav />
       {/* Nav bar */}
-      <div style={{ gridArea: "body" }}>
+      <div style={{ gridArea: "body", overflowY: "auto", minHeight: "0" }}>
         <ControlPanal />
       </div>
       {/* to-do Body */}

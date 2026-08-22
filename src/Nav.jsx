@@ -12,7 +12,6 @@ export default function Nav() {
           minWidth: "250px",
           padding: "10px",
           height: "100%",
-          overflow: "hidden",
           gridArea: "nav",
         }}
       >
