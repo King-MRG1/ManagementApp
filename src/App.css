@@ -10,6 +10,23 @@
     "nav header"
     "nav body";
 }
+.TD {
+  padding: 5px;
+  font-size: 20px !important;
+  font-weight: 600;
+  display: block;
+}
+.panalBtn {
+  margin: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+}
+button {
+  cursor: pointer;
+}
 .header-button {
   margin: 10px;
   height: 40px;
@@ -34,18 +51,131 @@
   padding: 10px;
 }
 .card {
-  min-width: 250px;
-  height: 125px;
+  min-width: 240px;
+  height: 126px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 10px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  border: 2px solid transparent;
 }
 .card-icon {
-  background: #f3ecec;
+  background: #dad1d1;
   width: 50px;
   height: 50px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+}
+.card::after {
+  content: "";
+  width: 1px;
+  height: 120px;
+  border: 5px solid;
+  position: relative;
+  left: 220px;
+  transition: border-color 0.5s ease;
+}
+
+/* card colors */
+.card.one::after {
+  border-color: transparent transparent transparent rgb(18, 92, 239);
+}
+.card.one:hover {
+  border: 2px solid rgb(18, 92, 239);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.one .card-icon {
+  color: rgb(18, 92, 239);
+  background-color: rgb(220 222 227);
+}
+.card.two::after {
+  border-color: transparent transparent transparent rgb(238, 196, 41);
+}
+.card.two:hover {
+  border: 2px solid rgb(238, 196, 41);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.two .card-icon {
+  color: rgb(238, 196, 41);
+  background-color: rgb(238, 238, 213);
+}
+.card.three::after {
+  border-color: transparent transparent transparent rgb(141, 48, 247);
+}
+.card.three:hover {
+  border: 2px solid rgb(141, 48, 247);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.three .card-icon {
+  color: rgb(141, 48, 247);
+  background-color: rgb(229, 213, 238);
+}
+.card.four::after {
+  border-color: transparent transparent transparent rgb(19, 187, 19);
+}
+.card.four:hover {
+  border: 2px solid rgb(19, 187, 19);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.four .card-icon {
+  color: rgb(19, 187, 19);
+  background-color: rgb(211, 240, 202);
+}
+.card.five::after {
+  border-color: transparent transparent transparent rgb(219, 41, 41);
+}
+.card.five:hover {
+  border: 2px solid rgb(219, 41, 41);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.five .card-icon {
+  color: rgb(219, 41, 41);
+  background-color: rgb(238, 213, 213);
+}
+.card.six::after {
+  border-color: transparent transparent transparent rgb(78, 196, 255);
+}
+.card.six:hover {
+  border: 2px solid rgb(78, 196, 255);
+  box-shadow: 0px 4px 20px 1px #000000;
+}
+.six .card-icon {
+  color: rgb(78, 196, 255);
+  background-color: rgb(213, 234, 238);
+}
+/* === card colors === */
+
+.graphHeadLine p {
+  display: inline-block;
+  margin: 10px;
+}
+.graphHeadLine p::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  left: 3px;
+  border: none;
+  border-radius: 50%;
+}
+.graphHeadLine p:first-child::before {
+  background-color: red;
+}
+.graphHeadLine p:last-child::before {
+  background-color: #9a6363;
+}
+.headerPieChart {
+  height: 45px;
+  padding: 10px;
+  text-align: right;
+  align-content: center;
+  background: #dcd9d9;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }

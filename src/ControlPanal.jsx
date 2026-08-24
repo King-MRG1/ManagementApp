@@ -1,20 +1,16 @@
+//mui
 import Typography from "@mui/material/Typography";
 import InventoryIcon from "@mui/icons-material/Inventory";
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import DangerousIcon from "@mui/icons-material/Dangerous";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+//charts
+import MyAreaChart from "./AreaChart";
+import MyPieChart from "./PieChart";
+
 export default function ControlPanal() {
-  let bStyle = {
-    margin: "10px",
-    height: "40px",
-    border: "none",
-    borderRadius: "10px",
-    padding: "10px",
-    fontWeight: "600",
-  };
-  let pStyle = {
-    padding: "5px",
-    fontSize: "25px",
-    fontWeight: "600",
-    display: "block",
-  };
   return (
     <>
       {/* container */}
@@ -22,20 +18,19 @@ export default function ControlPanal() {
         {/* name & date & buttons */}
         <div
           style={{
-            // background: "lime",
-            gridArea: "head",
             display: "flex",
             justifyContent: "space-between",
           }}
         >
           {/* name & date */}
           <div>
-            <Typography variant="p" style={pStyle}>
+            <Typography variant="p" className="TD">
               control panal
             </Typography>
             <Typography
               variant="p"
-              style={{ ...pStyle, fontSize: "15px", color: "gray" }}
+              className="TD"
+              style={{ fontSize: "15px", color: "gray" }}
             >
               friday 21 aug 2026
             </Typography>
@@ -43,10 +38,13 @@ export default function ControlPanal() {
           {/* === name & date === */}
           {/* buttons */}
           <div>
-            <button style={{ ...bStyle, background: "white", color: "black" }}>
+            <button
+              className="panalBtn"
+              style={{ background: "white", color: "black" }}
+            >
               Update
             </button>
-            <button style={{ ...bStyle, background: "orange" }}>
+            <button className="panalBtn" style={{ background: "orange" }}>
               new order
             </button>
           </div>
@@ -56,13 +54,12 @@ export default function ControlPanal() {
         {/* States */}
         <div
           style={{
-            background: "#b100ff",
-            gridArea: "state",
             display: "flex",
-            justifyContent: "space-between",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
           }}
         >
-          <div className="card 1">
+          <div className="card one">
             <div className="card-icon">
               <InventoryIcon />
             </div>
@@ -85,9 +82,9 @@ export default function ControlPanal() {
               </Typography>
             </div>
           </div>
-          <div className="card 1">
+          <div className="card two">
             <div className="card-icon">
-              <InventoryIcon />
+              <HourglassEmptyIcon />
             </div>
 
             <div style={{ textAlign: "right" }}>
@@ -108,9 +105,9 @@ export default function ControlPanal() {
               </Typography>
             </div>
           </div>
-          <div className="card 1">
+          <div className="card three">
             <div className="card-icon">
-              <InventoryIcon />
+              <LocalShippingIcon />
             </div>
 
             <div style={{ textAlign: "right" }}>
@@ -131,9 +128,9 @@ export default function ControlPanal() {
               </Typography>
             </div>
           </div>
-          <div className="card 1">
+          <div className="card four">
             <div className="card-icon">
-              <InventoryIcon />
+              <CheckCircleRoundedIcon />
             </div>
 
             <div style={{ textAlign: "right" }}>
@@ -154,9 +151,9 @@ export default function ControlPanal() {
               </Typography>
             </div>
           </div>
-          <div className="card 1">
+          <div className="card five">
             <div className="card-icon">
-              <InventoryIcon />
+              <DangerousIcon />
             </div>
 
             <div style={{ textAlign: "right" }}>
@@ -177,9 +174,9 @@ export default function ControlPanal() {
               </Typography>
             </div>
           </div>
-          <div className="card 1">
+          <div className="card six">
             <div className="card-icon">
-              <InventoryIcon />
+              <StorefrontIcon />
             </div>
 
             <div style={{ textAlign: "right" }}>
@@ -205,28 +202,101 @@ export default function ControlPanal() {
         {/* order preformance & graph */}
         <div
           style={{
-            background: "gray",
-            gridArea: "og",
             display: "grid",
             gridTemplateAreas: `"orders orders orders graph"`,
           }}
         >
           {/* preformance */}
-          <div style={{ background: "#cb7272", gridArea: "orders" }}>
-            <h2>order</h2>
+          <div
+            style={{
+              background: "white",
+              gridArea: "orders",
+              margin: "10px",
+              border: "none",
+              borderRadius: "10px",
+              boxShadow: "",
+            }}
+          >
+            {/* Header */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "10px",
+                alignItems: "center",
+                background: "#dcd9d9",
+                borderTopLeftRadius: "10px",
+                borderTopRightRadius: "10px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "20px",
+                  fontWeight: "500",
+                }}
+              >
+                Order Preformance - last 7 days
+              </p>
+              <div className="graphHeadLine">
+                <p>delivered</p>
+                <p>UnDelivered</p>
+              </div>
+            </div>
+            {/*=== Header === */}
+
+            <div
+              style={{
+                background: "white",
+                borderBottomLeftRadius: "10px",
+                borderBottomRightRadius: "10px",
+                height: "330px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MyAreaChart />
+            </div>
           </div>
+
           {/*=== preformance === */}
           {/* graph */}
-          <div style={{ background: "#b472cb", gridArea: "graph" }}>
-            <h2>graph</h2>
+          <div
+            style={{
+              background: "white",
+              gridArea: "graph",
+              margin: "10px",
+              border: "none",
+              borderRadius: "10px",
+              boxShadow: "",
+            }}
+          >
+            {/* Header */}
+            <div className="headerPieChart">
+              <p style={{ fontSize: "20px", fontWeight: "500" }}>Pie Chart</p>
+            </div>
+            {/* === header === */}
+            <div
+              style={{
+                background: "white",
+                borderBottomLeftRadius: "10px",
+                borderBottomRightRadius: "10px",
+                height: "330px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MyPieChart />
+            </div>
           </div>
           {/*=== graph === */}
         </div>
         {/*=== order proformance & graph === */}
+
         {/* last orders and actions */}
         <div
           style={{
-            gridArea: "loa",
             display: "grid",
             gridTemplateAreas: `"la la lo lo"`,
           }}
