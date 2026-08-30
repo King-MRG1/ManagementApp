@@ -1,0 +1,23 @@
+.orders-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  padding: 0 10px;
+}
+
+.tab-label {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+.orders-filters {
+  gap: 10px;
+}
+
+.orders-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

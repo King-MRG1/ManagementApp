@@ -6,78 +6,89 @@ import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 //charts
 import MyAreaChart from "./AreaChart";
 import MyPieChart from "./PieChart";
+import "./ControlPanal.css";
 
+const StyledTableCell = styled(TableCell)(() => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: "hsl(120, 4%, 78%)",
+    color: "black",
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  "&:last-child td, &:last-child th": {
+    border: 0,
+  },
+}));
 export default function ControlPanal() {
+  function createData(name, calories, fat, carbs) {
+    return { name, calories, fat, carbs };
+  }
+  const rows = [
+    createData("Frozen yoghurt", 159, 6.0, 24),
+    createData("Ice cream sandwich", 237, 9.0, 37),
+    createData("Eclair", 262, 16.0, 24),
+    createData("Cupcake", 305, 3.7, 67),
+    createData("Gingerbread", 356, 16.0, 49),
+  ];
   return (
     <>
       {/* container */}
-      <div className="control-container">
-        {/* name & date & buttons */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+      <div className="container">
+        {/* Header */}
+        <div className="control-panel-header">
           {/* name & date */}
-          <div>
-            <Typography variant="p" className="TD">
-              control panal
-            </Typography>
-            <Typography
-              variant="p"
-              className="TD"
-              style={{ fontSize: "15px", color: "gray" }}
-            >
+          <div className="TD">
+            <Typography variant="p">control panal</Typography>
+            <Typography variant="p" className="page-date">
               friday 21 aug 2026
             </Typography>
           </div>
           {/* === name & date === */}
           {/* buttons */}
           <div>
-            <button
-              className="panalBtn"
-              style={{ background: "white", color: "black" }}
-            >
+            <button className="panalBtn action-white">
               Update
             </button>
-            <button className="panalBtn" style={{ background: "orange" }}>
-              new order
-            </button>
+            <button className="panalBtn action-orange">new order</button>
           </div>
           {/*=== buttons === */}
         </div>
-        {/*==== name & date & buttons === */}
+        {/*==== Header === */}
+
         {/* States */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-          }}
-        >
+        <div className="control-panel-stats">
           <div className="card one">
             <div className="card-icon">
               <InventoryIcon />
             </div>
-
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
@@ -87,20 +98,14 @@ export default function ControlPanal() {
               <HourglassEmptyIcon />
             </div>
 
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
@@ -110,20 +115,14 @@ export default function ControlPanal() {
               <LocalShippingIcon />
             </div>
 
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
@@ -133,20 +132,14 @@ export default function ControlPanal() {
               <CheckCircleRoundedIcon />
             </div>
 
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
@@ -156,20 +149,14 @@ export default function ControlPanal() {
               <DangerousIcon />
             </div>
 
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
@@ -178,63 +165,28 @@ export default function ControlPanal() {
             <div className="card-icon">
               <StorefrontIcon />
             </div>
-
-            <div style={{ textAlign: "right" }}>
-              <Typography
-                variant="h6"
-                style={{ color: "gray", fontSize: "15px" }}
-              >
+            <div className="stat-content">
+              <Typography variant="h6" className="stat-label">
                 New orders
               </Typography>
-              <Typography
-                variant="h5"
-                style={{ fontSize: "20px", fontWeight: "bold" }}
-              >
+              <Typography variant="h5" className="stat-value">
                 11
               </Typography>
-              <Typography variant="h5" style={{ fontSize: "12px" }}>
+              <Typography variant="h5" className="stat-description">
                 No change
               </Typography>
             </div>
           </div>
         </div>
         {/*=== States === */}
+
         {/* order preformance & graph */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateAreas: `"orders orders orders graph"`,
-          }}
-        >
+        <div className="chart-grid">
           {/* preformance */}
-          <div
-            style={{
-              background: "white",
-              gridArea: "orders",
-              margin: "10px",
-              border: "none",
-              borderRadius: "10px",
-              boxShadow: "",
-            }}
-          >
+          <div className="dashboard-panel orders-panel">
             {/* Header */}
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "10px",
-                alignItems: "center",
-                background: "#dcd9d9",
-                borderTopLeftRadius: "10px",
-                borderTopRightRadius: "10px",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "500",
-                }}
-              >
+            <div className="table-heading">
+              <p className="table-heading-title">
                 Order Preformance - last 7 days
               </p>
               <div className="graphHeadLine">
@@ -244,49 +196,19 @@ export default function ControlPanal() {
             </div>
             {/*=== Header === */}
 
-            <div
-              style={{
-                background: "white",
-                borderBottomLeftRadius: "10px",
-                borderBottomRightRadius: "10px",
-                height: "330px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <div className="chart-body">
               <MyAreaChart />
             </div>
           </div>
-
           {/*=== preformance === */}
           {/* graph */}
-          <div
-            style={{
-              background: "white",
-              gridArea: "graph",
-              margin: "10px",
-              border: "none",
-              borderRadius: "10px",
-              boxShadow: "",
-            }}
-          >
+          <div className="dashboard-panel graph-panel">
             {/* Header */}
-            <div className="headerPieChart">
-              <p style={{ fontSize: "20px", fontWeight: "500" }}>Pie Chart</p>
+            <div className="table-heading table-heading-compact">
+              <p className="table-heading-title">Pie Chart</p>
             </div>
             {/* === header === */}
-            <div
-              style={{
-                background: "white",
-                borderBottomLeftRadius: "10px",
-                borderBottomRightRadius: "10px",
-                height: "330px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <div className="chart-body">
               <MyPieChart />
             </div>
           </div>
@@ -295,20 +217,83 @@ export default function ControlPanal() {
         {/*=== order proformance & graph === */}
 
         {/* last orders and actions */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateAreas: `"la la lo lo"`,
-          }}
-        >
+        <div className="activity-grid">
           {/* last orders */}
-          <div style={{ background: "#4c4ec4", gridArea: "lo" }}>
-            <h2>lo</h2>
+          <div className="dashboard-panel last-orders-panel">
+            {/* header */}
+            <div className="table-heading">
+              <h2>Last Orders</h2>
+              <Button variant="text">{"Show More -->"}</Button>
+            </div>
+            {/*=== header ===*/}
+            {/* Table */}
+            <div className="table-height">
+              <TableContainer component={Paper}>
+                <Table aria-label="customized table">
+                  <TableHead>
+                    <TableRow>
+                      <StyledTableCell align="right">OrderID</StyledTableCell>
+                      <StyledTableCell align="right">Trader</StyledTableCell>
+                      <StyledTableCell align="right">Price</StyledTableCell>
+                      <StyledTableCell align="right">State</StyledTableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rows.map((row) => (
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell align="right">
+                          {row.name}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.calories}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.fat}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.carbs}
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
           </div>
           {/* === last orders === */}
           {/* last actions */}
-          <div style={{ background: "#229398", gridArea: "la" }}>
-            <h2>la</h2>
+          <div className="activity-panel actions-panel">
+            <div className="activity-header">
+              <h2>Last Actions</h2>
+            </div>
+            <div className="activity-list">
+              <div className="activity-item">
+                <div className="activity-icon">icon</div>
+                <div className="activity-content">
+                  <p>new order</p>
+                  <span>description</span>
+                </div>
+                <span>time</span>
+              </div>
+
+              <div className="activity-item">
+                <div className="activity-icon">icon</div>
+                <div className="activity-content">
+                  <p>new order</p>
+                  <span>description</span>
+                </div>
+                <span>time</span>
+              </div>
+
+              <div className="activity-item">
+                <div className="activity-icon">icon</div>
+                <div className="activity-content">
+                  <p>new order</p>
+                  <span>description</span>
+                </div>
+                <span>time</span>
+              </div>
+            </div>
           </div>
           {/* === last actions === */}
         </div>

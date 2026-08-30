@@ -1,0 +1,119 @@
+.button {
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.nav {
+  background: black;
+  min-width: 250px;
+  padding: 10px;
+  height: 100%;
+  grid-area: nav;
+}
+
+.nav-header {
+  display: grid;
+  color: white;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "right top left"
+    "right bottom left";
+  gap: 10px;
+  align-items: stretch;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.nav-logo {
+  grid-area: right;
+  background: red;
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+  align-content: center;
+  font-weight: 700;
+}
+
+.nav-brand,
+.nav-section-title,
+.nav-subtitle {
+  text-align: right;
+}
+
+.nav-brand {
+  font-weight: 800;
+}
+
+.nav-menu-box {
+  width: 97%;
+  height: 67%;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.nav-item.Mui-selected {
+  background-color: #4b2e23;
+  color: white;
+  border: 1px solid #a1340d;
+  border-radius: 10px;
+}
+
+.nav-item.Mui-selected:hover {
+  background-color: #4b2e23;
+}
+
+.nav-icon {
+  color: white;
+}
+
+.nav-item-text {
+  text-align: right;
+}
+
+.nav-item-text .MuiListItemText-primary {
+  line-height: 1.2;
+}
+
+.nav-footer {
+  border-top: 1px white solid;
+  height: 100%;
+  margin-top: 10px;
+  padding-right: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-select {
+  font-size: 20px;
+  text-align: right;
+  background: #434141;
+  width: 95%;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+.menu {
+  grid-area: left;
+  color: gray;
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+}
+.menu:hover {
+  color: white;
+}
+.logout {
+  margin-top: 10px;
+  width: 95%;
+  text-align: right;
+  padding: 20px;
+}
+.logout:hover {
+  color: rgb(235, 15, 15);
+  border: 1px solid rgb(135, 8, 8) !important;
+  background-color: rgb(70, 37, 37);
+}

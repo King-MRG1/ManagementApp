@@ -1,0 +1,56 @@
+.header {
+  background: white;
+  height: 99%;
+  border-bottom: 1px white solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.header-search-area,
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-search-area > span {
+  margin: 10px;
+}
+
+.header-divider {
+  height: 40px;
+}
+
+.header-profile {
+  display: grid;
+  grid-template-areas:
+    "avatar name"
+    "avatar role";
+  margin: 10px;
+  height: 40px;
+  width: 200px;
+}
+
+.header-avatar {
+  background: orange;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  align-content: center;
+  color: white;
+  grid-area: avatar;
+}
+
+.header-profile-name,
+.header-profile-role {
+  grid-area: name;
+  margin: 0 5px;
+  text-align: right;
+}
+
+.header-profile-role {
+  grid-area: role;
+}

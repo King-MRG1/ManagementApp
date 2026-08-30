@@ -1,0 +1,159 @@
+.control-panel-header,
+.control-panel-stats,
+.chart-grid,
+.activity-grid {
+  display: flex;
+}
+
+.control-panel-header {
+  justify-content: space-between;
+}
+
+.control-panel-stats {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stat-content {
+  text-align: right;
+}
+
+.chart-grid,
+.activity-grid {
+  display: grid;
+}
+
+.chart-grid {
+  grid-template-areas: "orders orders orders graph";
+}
+
+.activity-grid {
+  grid-template-areas: "last-orders actions";
+}
+
+.dashboard-panel {
+  background: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.dashboard-panel-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background: #dcd9d9;
+  border-radius: 10px 10px 0 0;
+}
+
+.chart-body {
+  background: white;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.last-orders-panel {
+  grid-area: last-orders;
+}
+
+.actions-panel {
+  grid-area: actions;
+}
+
+.orders-panel {
+  grid-area: orders;
+}
+
+.graph-panel {
+  grid-area: graph;
+}
+
+.table-height {
+  height: 350px;
+}
+
+.action-white {
+  background: white;
+  color: black;
+}
+
+.action-orange {
+  background: orange;
+}
+
+.action-green {
+  background: green;
+  color: white;
+}
+
+.stat-label {
+  color: gray;
+  font-size: 15px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stat-description {
+  font-size: 12px;
+}
+
+.activity-panel {
+  background: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.activity-header {
+  padding: 10px;
+  background: #dcd9d9;
+  border-radius: 10px 10px 0 0;
+  text-align: right;
+}
+
+.activity-list {
+  padding: 20px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid black;
+}
+
+.activity-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-content {
+  flex: 1;
+  text-align: right;
+}
+
+.area-chart,
+.pie-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.area-chart {
+  padding-right: 10px;
+}
+
+.pie-legend {
+  width: 100%;
+  font-size: 11px;
+  white-space: wrap;
+}
+
+.pie-legend-label {
+  margin-right: 5px;
+}

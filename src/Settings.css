@@ -1,0 +1,23 @@
+.settingsPanal {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.settingCard {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+.settingCard:hover {
+  border: 2px red solid ;
+}

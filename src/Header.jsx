@@ -3,23 +3,14 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import SearchIcon from "@mui/icons-material/Search";
 import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import "./Header.css";
 
 export default function Header() {
   return (
-    <div
-      style={{
-        background: "white",
-        height: "99%",
-        borderBottom: "1px white solid",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        color: "black",
-      }}
-    >
+    <div className="header">
       {/* loc and search */}
-      <div>
-        <span style={{ margin: "10px" }}>لوحة التحكم</span>
+      <div className="header-search-area">
+        <span>لوحة التحكم</span>
         <OutlinedInput
           placeholder="Search"
           id={`${1}-input`}
@@ -32,49 +23,12 @@ export default function Header() {
           inputProps={{
             "aria-label": "search",
           }}
-          sx={{
-            m: 1,
-            width: 225,
-            height: "40px",
-            transition: "width 0.25s",
-            borderRadius: "30px",
-
-            "&.Mui-focused": {
-              width: 325,
-            },
-
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#bdbdbd",
-            },
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#a50909",
-              borderWidth: 2,
-            },
-
-            "& .MuiInputAdornment-root": {
-              position: "absolute",
-              insetInlineEnd: 12,
-              margin: 0,
-            },
-
-            "& .MuiOutlinedInput-input": {
-              paddingInlineEnd: "36px",
-              transition: "0.5s",
-            },
-
-            "&.Mui-focused .MuiOutlinedInput-input": {
-              color: "#1976d2",
-            },
-          }}
+          className="search-input header-search-input"
         />
       </div>
       {/* loc and search */}
       {/* buttons and role */}
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
+      <div className="header-actions">
         {/* buttons */}
         <div>
           <button className="header-button">
@@ -86,47 +40,12 @@ export default function Header() {
         </div>
         {/* buttons */}
 
-        <hr style={{ height: "40px" }} />
+        <hr className="header-divider" />
         {/* Profile */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateAreas: `
-          "avater name"
-          "avater role"
-        `,
-            margin: " 10px",
-            height: "40px",
-            width: "200px",
-          }}
-        >
-          <h6
-            style={{
-              background: "orange",
-              width: "40px",
-              height: "40px",
-              margin: "0",
-              border: "none",
-              borderRadius: "50%",
-              alignContent: "center",
-              color: "white",
-              gridArea: "avater",
-            }}
-          >
-            M
-          </h6>
-          <h4
-            style={{
-              gridArea: "name",
-              margin: "0 5px",
-              textAlign: "right",
-            }}
-          >
-            Mohamed Ramadan
-          </h4>
-          <h6 style={{ gridArea: "role", margin: "0 5px", textAlign: "right" }}>
-            Admin
-          </h6>
+        <div className="header-profile">
+          <h6 className="header-avatar">M</h6>
+          <h4 className="header-profile-name">Mohamed Ramadan</h4>
+          <h6 className="header-profile-role">Admin</h6>
         </div>
         {/* Profile */}
       </div>

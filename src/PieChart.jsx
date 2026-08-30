@@ -2,10 +2,10 @@ import { Cell, Legend, Pie, PieChart, Sector } from "recharts";
 import { useState } from "react";
 
 const data = [
-  { name: "Group A", value: 400, color: "#e74c3c" },
-  { name: "Group B", value: 300, color: "#3498db" },
-  { name: "Group C", value: 100, color: "#2ecc71" },
-  { name: "Group D", value: 200, color: "#f1c40f" },
+  { name: "Group A", value: 500, color: "#e74c3c" },
+  { name: "Group B", value: 125, color: "#3498db" },
+  { name: "Group C", value: 150, color: "#2ecc71" },
+  { name: "Group D", value: 250, color: "#f1c40f" },
 ];
 
 const renderActiveShape = ({
@@ -66,10 +66,7 @@ export default function MyPieChart({ isAnimationActive = true }) {
 
   return (
     <PieChart
-      style={{
-        width: "100%",
-        height: "100%",
-      }}
+      className="pie-chart"
       responsive
       margin={{
         top: 5,
@@ -100,14 +97,8 @@ export default function MyPieChart({ isAnimationActive = true }) {
         layout="horizontal"
         iconType="circle"
         iconSize={8}
-        formatter={(value) => (
-          <span style={{ marginRight: "5px" }}>{value}</span>
-        )}
-        wrapperStyle={{
-          width: "100%",
-          fontSize: "11px",
-          whiteSpace: "wrap",
-        }}
+        formatter={(value) => <span className="pie-legend-label">{value}</span>}
+        className="pie-legend"
       />
     </PieChart>
   );
