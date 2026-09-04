@@ -8,49 +8,70 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import { useState } from "react";
-import "./Orders.css";
+import DataTable from "./DataTable";
+import "../style/Orders.css";
+import AddNewOrder from "./AddNewOrder";
 
-const StyledTableCell = styled(TableCell)(() => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "transparent",
-    color: "black",
+const tableData = [
+  {
+    orderId: "ORD-1001",
+    trader: "John Smith",
+    city: "New York",
+    price: "$240",
+    shippingFee: "$12",
+    shippingType: "Express",
+    state: "Delivered",
+    date: "2026-08-21",
+    permissions: "Manage",
   },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-    padding: "20px",
+  {
+    orderId: "ORD-1002",
+    trader: "Sarah Lee",
+    city: "Chicago",
+    price: "$185",
+    shippingFee: "$10",
+    shippingType: "Standard",
+    state: "Pending",
+    date: "2026-08-22",
+    permissions: "Manage",
   },
-}));
-
-const StyledTableRow = styled(TableRow)(() => ({
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
+  {
+    orderId: "ORD-1003",
+    trader: "Mike Brown",
+    city: "Boston",
+    price: "$320",
+    shippingFee: "$14",
+    shippingType: "Express",
+    state: "Delivered",
+    date: "2026-08-23",
+    permissions: "Manage",
   },
-}));
-
-function createData(name, calories, fat, carbs) {
-  return { name, calories, fat, carbs };
-}
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24),
-  createData("Ice cream sandwich", 237, 9.0, 37),
-  createData("Eclair", 262, 16.0, 24),
-  createData("Cupcake", 305, 3.7, 67),
-  createData("Gingerbread", 356, 16.0, 49),
+];
+const tableHeader = [
+  "OrderID",
+  "Trader",
+  "City",
+  "Price",
+  "Shipping fee",
+  "Shipping type",
+  "State",
+  "Date",
+  "Permissions",
 ];
 
 export default function Order() {
   const [value, setValue] = useState(0);
   const [age, setAge] = useState("");
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChangeBranch = (event) => {
     setAge(event.target.value);
@@ -78,7 +99,9 @@ export default function Order() {
         {/* buttons */}
         <div>
           <button className="panalBtn action-green">Upload Excel</button>
-          <button className="panalBtn action-orange">new order</button>
+          <button className="panalBtn action-orange" onClick={handleClickOpen}>
+            new order
+          </button>
         </div>
         {/*=== buttons === */}
       </div>
@@ -160,13 +183,13 @@ export default function Order() {
         {/* === Filter settings === */}
         <Box className="table-section">
           <CustomTabPanel value={value} index={0}>
-            <OrderTable />
+            <DataTable header={tableHeader} data={tableData} />
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            <OrderTable />
+            <DataTable header={tableHeader} data={tableData} />
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            <OrderTable />
+            <DataTable header={tableHeader} data={tableData} />
           </CustomTabPanel>
         </Box>
         {/* pagenation */}
@@ -184,6 +207,7 @@ export default function Order() {
         {/*=== pagenation === */}
       </Box>
       {/*=== body === */}
+      <AddNewOrder handleClose={handleClose} isOpen={open} />
     </div>
     // === content container ===
   );
@@ -213,40 +237,4 @@ function a11yProps(index) {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
   };
-}
-function OrderTable() {
-  return (
-    <TableContainer component={Paper} className="table-container">
-      <Table aria-label="customized table">
-        <TableHead className="table-head-background">
-          <TableRow>
-            <StyledTableCell align="right">OrderID</StyledTableCell>
-            <StyledTableCell align="right">Trader</StyledTableCell>
-            <StyledTableCell align="right">City</StyledTableCell>
-            <StyledTableCell align="right">Price</StyledTableCell>
-            <StyledTableCell align="right">Shipping fee</StyledTableCell>
-            <StyledTableCell align="right">Shipping type</StyledTableCell>
-            <StyledTableCell align="right">State</StyledTableCell>
-            <StyledTableCell align="right">Date</StyledTableCell>
-            <StyledTableCell align="right">Permissions</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell align="right">{row.name}</StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
 }

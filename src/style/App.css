@@ -38,14 +38,14 @@ button {
   width: 40px;
   border-radius: 10px;
   border: none;
-  background: #f0f2f5;
-  color: black;
+  background: var(--surface-muted);
+  color: var(--text-h);
 }
 .container {
-  background-color: #d1d3d6;
+  background-color: var(--bg);
   min-height: 100%;
   overflow-y: auto;
-  color: black;
+  color: var(--text-h);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -55,7 +55,7 @@ button {
 .card {
   min-width: 240px;
   height: 126px;
-  background: white;
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -66,7 +66,7 @@ button {
 }
 
 .card-icon {
-  background: #dad1d1;
+  background: var(--accent-bg);
   width: 50px;
   height: 50px;
   display: grid;
@@ -76,7 +76,7 @@ button {
 .card::after {
   content: "";
   width: 1px;
-  height: 120px;
+  height: 110px;
   border: 5px solid;
   position: relative;
   left: 220px;
@@ -85,70 +85,70 @@ button {
 
 /* card colors */
 .card.one::after {
-  border-color: transparent transparent transparent rgb(18, 92, 239);
+  border-color: transparent transparent transparent var(--accent);
 }
 .card.one:hover {
-  border: 2px solid rgb(18, 92, 239);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--accent);
+  box-shadow: 0px 4px 20px 1px rgba(21, 101, 192, 0.18);
 }
 .one .card-icon {
-  color: rgb(18, 92, 239);
-  background-color: rgb(220 222 227);
+  color: var(--accent);
+  background-color: var(--accent-bg);
 }
 .card.two::after {
-  border-color: transparent transparent transparent rgb(238, 196, 41);
+  border-color: transparent transparent transparent var(--warning);
 }
 .card.two:hover {
-  border: 2px solid rgb(238, 196, 41);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--warning);
+  box-shadow: 0px 4px 20px 1px rgba(217, 154, 24, 0.2);
 }
 .two .card-icon {
-  color: rgb(238, 196, 41);
-  background-color: rgb(238, 238, 213);
+  color: var(--warning);
+  background-color: rgba(229, 161, 26, 0.12);
 }
 .card.three::after {
-  border-color: transparent transparent transparent rgb(141, 48, 247);
+  border-color: transparent transparent transparent var(--secondary);
 }
 .card.three:hover {
-  border: 2px solid rgb(141, 48, 247);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--secondary);
+  box-shadow: 0px 4px 20px 1px rgba(0, 166, 166, 0.18);
 }
 .three .card-icon {
-  color: rgb(141, 48, 247);
-  background-color: rgb(229, 213, 238);
+  color: var(--secondary);
+  background-color: rgba(0, 166, 166, 0.12);
 }
 .card.four::after {
-  border-color: transparent transparent transparent rgb(19, 187, 19);
+  border-color: transparent transparent transparent var(--success);
 }
 .card.four:hover {
-  border: 2px solid rgb(19, 187, 19);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--success);
+  box-shadow: 0px 4px 20px 1px rgba(75, 149, 96, 0.2);
 }
 .four .card-icon {
-  color: rgb(19, 187, 19);
-  background-color: rgb(211, 240, 202);
+  color: var(--success);
+  background-color: rgba(46, 155, 97, 0.12);
 }
 .card.five::after {
-  border-color: transparent transparent transparent rgb(219, 41, 41);
+  border-color: transparent transparent transparent var(--danger);
 }
 .card.five:hover {
-  border: 2px solid rgb(219, 41, 41);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--danger);
+  box-shadow: 0px 4px 20px 1px rgba(214, 69, 69, 0.18);
 }
 .five .card-icon {
-  color: rgb(219, 41, 41);
-  background-color: rgb(238, 213, 213);
+  color: var(--danger);
+  background-color: rgba(214, 69, 69, 0.12);
 }
 .card.six::after {
-  border-color: transparent transparent transparent rgb(78, 196, 255);
+  border-color: transparent transparent transparent var(--secondary);
 }
 .card.six:hover {
-  border: 2px solid rgb(78, 196, 255);
-  box-shadow: 0px 4px 20px 1px #000000;
+  border: 2px solid var(--secondary);
+  box-shadow: 0px 4px 20px 1px rgba(0, 166, 166, 0.18);
 }
 .six .card-icon {
-  color: rgb(78, 196, 255);
-  background-color: rgb(213, 234, 238);
+  color: var(--secondary);
+  background-color: rgba(0, 166, 166, 0.12);
 }
 /* === card colors === */
 
@@ -168,17 +168,17 @@ button {
   border-radius: 50%;
 }
 .graphHeadLine p:first-child::before {
-  background-color: red;
+  background-color: var(--danger);
 }
 .graphHeadLine p:last-child::before {
-  background-color: #9a6363;
+  background-color: var(--secondary);
 }
 .pagnation button {
   width: 30px;
   height: 30px;
   margin-left: 5px;
-  background-color: white;
-  color: black;
+  background-color: var(--surface);
+  color: var(--text-h);
   border: none;
   border-radius: 5px;
 }
@@ -205,7 +205,7 @@ button {
 
 .panel {
   width: 100%;
-  background: #dbc0c0;
+  background-color: var(--surface-muted);
   border-radius: 10px;
 }
 
@@ -215,7 +215,7 @@ button {
 }
 
 .table-header {
-  padding: 0 10px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -230,13 +230,13 @@ button {
 }
 
 .active-page {
-  background: red !important;
-  color: white !important;
+  background: var(--accent) !important;
+  color: var(--surface) !important;
 }
 
 .filter-input {
-  background: #a2a2a248;
-  color: black;
+  background: var(--surface-muted);
+  color: var(--text-h);
   margin: 10px 0 10px 10px;
   border: none;
   border-radius: 10px;
@@ -245,10 +245,21 @@ button {
 }
 
 .search-input .MuiOutlinedInput-notchedOutline {
-  border-color: #ac9e9e;
-  background: #a2a2a248;
+  border-color: var(--border);
+}
+.search-input input::placeholder,
+.search-input .MuiOutlinedInput-input::placeholder,
+.search-input .MuiInputBase-input::placeholder {
+  color: var(--text);
+  opacity: 1 !important;
 }
 
+.search-input.Mui-focused input::placeholder,
+.search-input.Mui-focused .MuiOutlinedInput-input::placeholder,
+.search-input.Mui-focused .MuiInputBase-input::placeholder {
+  color: var(--accent);
+  opacity: 1 !important;
+}
 .search-input {
   margin: 10px 10px 10px 0 !important;
   width: 20%;
@@ -278,21 +289,21 @@ button {
 }
 
 .header-search-input .MuiOutlinedInput-notchedOutline {
-  border-color: #bdbdbd;
+  border-color: var(--border);
 }
 
 .header-search-input.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #a50909;
+  border-color: var(--accent);
   border-width: 2px;
 }
 
 .header-search-input.Mui-focused .MuiOutlinedInput-input {
-  color: #1976d2;
+  color: var(--accent);
 }
 
 .filter-select {
-  background: #a2a2a248;
-  color: black;
+  background: var(--surface-muted);
+  color: var(--text-h);
   margin: 10px 0 10px 10px;
   border: none;
   border-radius: 10px;
@@ -301,14 +312,15 @@ button {
 }
 
 .submit-filter {
-  background: orange;
+  background: var(--accent);
   width: 200px;
   font-size: 18px;
+  color: white;
 }
 
 .table-section {
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: var(--border);
 }
 
 .table-heading {
@@ -316,7 +328,7 @@ button {
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  background: #dcd9d9;
+  background: var(--surface-muted);
   border-radius: 10px 10px 0 0;
 }
 
@@ -332,11 +344,11 @@ button {
 }
 
 .table-head-background {
-  background: #dbc0c0;
+  background: var(--surface-muted);
 }
 
 .search-input.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #a50909;
+  border-color: var(--accent);
   border-width: 2px;
   background: #ffffff3f;
 }
@@ -353,5 +365,5 @@ button {
 }
 
 .search-input.Mui-focused .MuiOutlinedInput-input {
-  color: #000000;
+  color: var(--text-h);
 }

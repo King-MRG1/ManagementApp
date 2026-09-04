@@ -1,11 +1,11 @@
 .header {
-  background: white;
+  background: var(--surface);
   height: 99%;
-  border-bottom: 1px white solid;
+  border-bottom: 1px var(--border) solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color: var(--text-h);
 }
 
 .header-search-area,
@@ -33,7 +33,7 @@
 }
 
 .header-avatar {
-  background: orange;
+  background: var(--secondary);
   width: 40px;
   height: 40px;
   margin: 0;

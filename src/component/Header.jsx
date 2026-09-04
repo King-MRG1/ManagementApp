@@ -3,7 +3,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import SearchIcon from "@mui/icons-material/Search";
 import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import "./Header.css";
+import "../style/Header.css";
 
 export default function Header() {
   return (

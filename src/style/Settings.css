@@ -7,7 +7,7 @@
   gap: 10px;
 }
 .settingCard {
-  background-color: whitesmoke;
+  background-color: var(--surface);
   padding: 10px;
   border-radius: 10px;
   width: 250px;
@@ -19,5 +19,5 @@
   transition: border 0.2s;
 }
 .settingCard:hover {
-  border: 2px red solid ;
+  border: 2px var(--accent) solid;
 }

@@ -1,0 +1,16 @@
+.table-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: end;
+}
+.table-footer button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: brown;
+  color: white;
+}
+.table-input {
+  width: 15px;
+  height: 15px;
+}

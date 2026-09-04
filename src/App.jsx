@@ -1,15 +1,17 @@
-import "./App.css";
-import Header from "./Header";
-import Nav from "./Nav";
-import ControlPanal from "./ControlPanal";
-import Orders from "./Orders";
-import Employees from "./Employees";
-import Traders from "./Traders";
-import Deliveries from "./Deliveries";
-import Cities from "./Cities";
-import Regions from "./Regions";
-import TraderView from "./TraderVIew";
-import Settings from "./Settings";
+import "./style/App.css";
+import Header from "./component/Header";
+import Nav from "./component/Nav";
+import ControlPanal from "./component/ControlPanal";
+import Orders from "./component/Orders";
+import Employees from "./component/Employees";
+import Traders from "./component/Traders";
+import Deliveries from "./component/Deliveries";
+import Cities from "./component/Cities";
+import Regions from "./component/Regions";
+import TraderView from "./component/TraderVIew";
+import Settings from "./component/Settings";
+import Permissions from "./component/Permissions";
+import FinancialReport from "./component/FinancialReports";
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
       <Nav />
       {/* Nav bar */}
       <div className="app-body-area">
-        {/* <ControlPanal />
+        <ControlPanal />
         <hr />
         <Orders />
         <hr />
@@ -37,8 +39,12 @@ function App() {
         <Regions />
         <hr />
         <TraderView />
-        <hr /> */}
+        <hr />
         <Settings />
+        <hr />
+        <Permissions />
+        <hr />
+        <FinancialReport />
       </div>
     </div>
   );

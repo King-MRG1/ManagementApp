@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import "./Settings.css";
+import "../style/Settings.css";
 export default function Settings() {
   return (
     // content container

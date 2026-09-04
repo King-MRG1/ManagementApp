@@ -19,7 +19,7 @@ import MapIcon from "@mui/icons-material/Map";
 import SecurityIcon from "@mui/icons-material/Security";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import InventoryIcon from "@mui/icons-material/Inventory";
-import "./Nav.css";
+import "../style/Nav.css";
 
 export default function Nav() {
   return (
@@ -115,9 +115,7 @@ function FooterNav() {
   const [role, setRole] = useState(1);
   return (
     <div className="nav-footer">
-      <Typography variant="h6" className="nav-section-title">
-        نوع الحساب
-      </Typography>
+      <h4>نوع الحساب</h4>
       <Select
         aria-describedby="0-helper-text"
         value={role}
