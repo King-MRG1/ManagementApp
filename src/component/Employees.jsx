@@ -144,9 +144,6 @@ function AddEmployee({ handleClose, isOpen }) {
         aria-labelledby="customized-dialog-title"
         open={isOpen}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Modal title
-        </DialogTitle>
         <IconButton
           aria-label="close"
           onClick={handleClose}
@@ -159,26 +156,89 @@ function AddEmployee({ handleClose, isOpen }) {
         >
           <CloseIcon />
         </IconButton>
+        <DialogTitle
+          sx={{ m: 0, p: 2, fontWeight: "700", fontSize: "20px !important" }}
+          id="customized-dialog-title"
+        >
+          Add New Employee
+        </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <form action="" className="modalForm">
+            <div>
+              <label htmlFor="CustomerName">Customer Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                name="CustomerName"
+                id="CustomerName"
+              />
+            </div>
+            <div>
+              <label htmlFor="Email">Email</label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                name="Email"
+                id="Email"
+              />
+            </div>
+            <div>
+              <label htmlFor="Password">Password</label>
+              <input type="password" name="Password" id="Password" />
+            </div>
+            <div>
+              <label htmlFor="Phone">Phone</label>
+              <input
+                type="number"
+                placeholder="Optional"
+                name="Phone"
+                id="Phone"
+              />
+            </div>
+            <div>
+              <label htmlFor="Branch">Branch</label>
+              <select name="Branch" id="Branch">
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alexandria">Alexandria</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="Bank">Bank</label>
+              <select name="Bank" id="Bank">
+                <option value="October6">October 6</option>
+                <option value="Zamalek">Zamalek</option>
+                <option value="BolaqEldakror">Bolaq Eldakror</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="Role">Role</label>
+              <select name="Role" id="Role">
+                <option value="NormalShipping">Normal Shipping</option>
+                <option value="ShippingOn2Days">Shipping on 2 days</option>
+                <option value="ShippingOn24">Shipping On 24h</option>
+                <option value="ShippingOnBranch">Shipping on branch</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="Address">Address</label>
+              <input
+                type="text"
+                placeholder="Address"
+                name="Address"
+                id="Address"
+              />
+            </div>
+          </form>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
+          <Button
+            variant="contained"
+            color="success"
+            autoFocus
+            onClick={handleClose}
+          >
+            Success
           </Button>
         </DialogActions>
       </BootstrapDialog>

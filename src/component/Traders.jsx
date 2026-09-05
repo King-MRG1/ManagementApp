@@ -152,9 +152,6 @@ function AddTrader({ handleClose, isOpen }) {
         aria-labelledby="customized-dialog-title"
         open={isOpen}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Modal title
-        </DialogTitle>
         <IconButton
           aria-label="close"
           onClick={handleClose}
@@ -167,26 +164,136 @@ function AddTrader({ handleClose, isOpen }) {
         >
           <CloseIcon />
         </IconButton>
+        <DialogTitle
+          sx={{ m: 0, p: 2, fontWeight: "700", fontSize: "20px !important" }}
+          id="customized-dialog-title"
+        >
+          Add New Trader
+        </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <form action="" className="modalForm">
+            <div>
+              <label htmlFor="TraderName">Trader Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                name="TraderName"
+                id="TraderName"
+              />
+            </div>
+            <div>
+              <label htmlFor="StoreName">Store Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                name="StoreName"
+                id="StoreName"
+              />
+            </div>
+            <div>
+              <label htmlFor="Email">Email</label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                name="Email"
+                id="Email"
+              />
+            </div>
+            <div>
+              <label htmlFor="Password">Password</label>
+              <input type="password" name="Password" id="Password" />
+            </div>
+            <div>
+              <label htmlFor="Phone">Phone</label>
+              <input
+                type="number"
+                placeholder="Optional"
+                name="Phone"
+                id="Phone"
+              />
+            </div>
+            <div>
+              <label htmlFor="Governorate">Governorate</label>
+              <select name="Governorate" id="Governorate">
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alexandria">Alexandria</option>
+              </select>
+            </div>
+            <div style={{ width: "100%" }}>
+              <label htmlFor="Address">Address</label>
+              <input
+                type="text"
+                placeholder="Address"
+                name="Address"
+                id="Address"
+              />
+            </div>
+            <hr />
+            <p>Pricing</p>
+            <div>
+              <label htmlFor="ReciveFee">Recive Fee</label>
+              <input
+                type="number"
+                name="ReciveFee"
+                id="ReciveFee"
+                placeholder="0"
+              />
+            </div>
+            <div>
+              <label htmlFor="RejectionPercentage">Rejection Percentage</label>
+              <input
+                type="number"
+                name="RejectionPercentage"
+                id="RejectionPercentage"
+                placeholder="20"
+              />
+            </div>
+            <div style={{ width: "100%" }}>
+              <label htmlFor="SpicialPricing">Spicial Pricing</label>
+              <input
+                type="checkBox"
+                name="SpicialPricing"
+                id="SpicialPricing"
+              />
+            </div>
+            <div className="show modalForm" style={{ width: "100%" }}>
+              <div>
+                <label htmlFor="Governorate">Governorate</label>
+                <select name="Governorate" id="Governorate">
+                  <option value="Cairo">Cairo</option>
+                  <option value="Giza">Giza</option>
+                  <option value="Alexandria">Alexandria</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="City">City</label>
+                <select name="City" id="City">
+                  <option value="October6">October 6</option>
+                  <option value="Zamalek">Zamalek</option>
+                  <option value="BolaqEldakror">Bolaq Eldakror</option>
+                </select>
+              </div>
+              <div style={{ width: "100%" }}>
+                <label htmlFor="SpicalPrice">Spical Price</label>
+                <input
+                  type="number"
+                  name="SpicalPrice"
+                  id="SpicalPrice"
+                  placeholder="40"
+                />
+              </div>
+            </div>
+          </form>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
+          <Button
+            variant="contained"
+            color="success"
+            autoFocus
+            onClick={handleClose}
+          >
+            Success
           </Button>
         </DialogActions>
       </BootstrapDialog>
