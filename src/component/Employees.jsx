@@ -233,12 +233,12 @@ function AddEmployee({ handleClose, isOpen }) {
         </DialogContent>
         <DialogActions>
           <Button
+            className="modal-submit"
             variant="contained"
-            color="success"
             autoFocus
             onClick={handleClose}
           >
-            Success
+            Add Employee
           </Button>
         </DialogActions>
       </BootstrapDialog>

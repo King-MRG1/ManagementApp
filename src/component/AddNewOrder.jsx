@@ -7,7 +7,6 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
-import "../style/Modal.css";
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -254,12 +253,12 @@ export default function AddNewOrder({ handleClose, isOpen }) {
         </DialogContent>
         <DialogActions>
           <Button
+            className="modal-submit"
             variant="contained"
-            color="success"
-            autoFocus 
+            autoFocus
             onClick={handleClose}
           >
-            Success
+            Add Order
           </Button>
         </DialogActions>
       </BootstrapDialog>

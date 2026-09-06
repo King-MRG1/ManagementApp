@@ -1,78 +1,161 @@
-.css-uq7k9j-MuiPaper-root-MuiDialog-paper {
+.MuiDialog-paper {
   max-width: 50% !important;
+  background: var(--surface);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
-label {
+.MuiDialogTitle-root {
+  color: var(--text-h);
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0;
+}
+.MuiDialogContent-root {
+  color: var(--text);
+  border-color: var(--border) !important;
+}
+.MuiDialogActions-root {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.MuiDialogActions-root .modal-submit {
+  background: var(--accent);
+  color: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: none;
+  box-shadow: none;
+}
+.MuiDialogActions-root .modal-submit:hover {
+  background: #11549f;
+  border-color: #11549f;
+  box-shadow: none;
+}
+.MuiDialog-paper > .MuiIconButton-root {
+  color: var(--text);
+  border-radius: 10px;
+}
+.MuiDialog-paper > .MuiIconButton-root:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+.MuiDialog-paper label {
   display: block;
+  color: var(--text-h);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
 }
-.modalForm {
+.MuiDialog-paper .modalForm {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
-.modalForm div {
+.MuiDialog-paper .modalForm div {
   width: calc(50% - 10px);
 }
-.modalForm input,
-.modalForm select,
-.modalForm textarea {
+.MuiDialog-paper .modalForm input,
+.MuiDialog-paper .modalForm select,
+.MuiDialog-paper .modalForm textarea {
   width: 100%;
   height: 40px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-h);
   padding: 10px;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.modalForm hr,
-.modalForm p {
+.MuiDialog-paper .modalForm input::placeholder,
+.MuiDialog-paper .modalForm textarea::placeholder {
+  color: #9aa7b5;
+}
+.MuiDialog-paper .modalForm input:focus,
+.MuiDialog-paper .modalForm select:focus,
+.MuiDialog-paper .modalForm textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+.MuiDialog-paper .modalForm hr,
+.MuiDialog-paper .modalForm p {
   width: 100%;
 }
-.modalForm .table-container {
+.MuiDialog-paper .modalForm .table-container {
   width: 100%;
   overflow: hidden;
   margin-bottom: 12px;
 }
-.table-container table {
-  border: 1px solid black;
+.MuiDialog-paper .table-container table {
+  border: 1px solid var(--border);
   border-radius: 8px;
+  background: var(--surface);
   min-width: 100%;
   text-align: center;
   padding: 10px;
   border-collapse: collapse;
 }
-.table-container table td,.table-container table th {
+.MuiDialog-paper .table-container table td,
+.MuiDialog-paper .table-container table th {
   padding: 10px;
 }
-.table-container table input {
+.MuiDialog-paper .table-container table th {
+  background: var(--surface-muted);
+  color: var(--text-h);
+  font-weight: 700;
+}
+.MuiDialog-paper .table-container table td {
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+.MuiDialog-paper .table-container table input {
   width: calc(100% - 10px);
   padding: 5px;
 }
-.table-container table input[type="number"] {
+.MuiDialog-paper .table-container table input[type="number"] {
   width: 100px;
 }
-.table-container button {
-  border: none;
+.MuiDialog-paper .table-container button {
+  margin-top: 10px;
+  border: 1px solid var(--accent);
   border-radius: 10px;
   height: 30px;
-  background-color: sienna;
-  color: white;
+  background-color: var(--accent);
+  color: var(--surface);
+  font-weight: 700;
 }
-.modalForm textarea {
+.MuiDialog-paper .modalForm textarea {
   height: 80px;
 }
-.trader-Data {
+.MuiDialog-paper .trader-Data {
   width: 100% !important;
   display: flex;
   gap: 10px;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px;
-  background-color: darkgrey;
+  background-color: var(--surface-muted);
 }
-.trader-Data .dataContainer {
+.MuiDialog-paper .trader-Data .dataContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+.MuiDialog-paper .label-checkbox-branch {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+  align-items: center;
+}
+.MuiDialog-paper .checkbox-branch {
+  width: 20px !important;
 }

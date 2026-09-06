@@ -1,4 +1,5 @@
 import "./style/App.css";
+import "./style/Modal.css";
 import Header from "./component/Header";
 import Nav from "./component/Nav";
 import ControlPanal from "./component/ControlPanal";

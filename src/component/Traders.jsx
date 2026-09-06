@@ -257,43 +257,50 @@ function AddTrader({ handleClose, isOpen }) {
                 id="SpicialPricing"
               />
             </div>
-            <div className="show modalForm" style={{ width: "100%" }}>
-              <div>
-                <label htmlFor="Governorate">Governorate</label>
-                <select name="Governorate" id="Governorate">
-                  <option value="Cairo">Cairo</option>
-                  <option value="Giza">Giza</option>
-                  <option value="Alexandria">Alexandria</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="City">City</label>
-                <select name="City" id="City">
-                  <option value="October6">October 6</option>
-                  <option value="Zamalek">Zamalek</option>
-                  <option value="BolaqEldakror">Bolaq Eldakror</option>
-                </select>
-              </div>
-              <div style={{ width: "100%" }}>
-                <label htmlFor="SpicalPrice">Spical Price</label>
-                <input
-                  type="number"
-                  name="SpicalPrice"
-                  id="SpicalPrice"
-                  placeholder="40"
-                />
-              </div>
+            <div className="show table-container" style={{ width: "100%" }}>
+              <table border={1}>
+                <tr>
+                  <th>Governorate</th>
+                  <th>City</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>
+                    <select name="Governorate" id="Governorate">
+                      <option value="Cairo">Cairo</option>
+                      <option value="Giza">Giza</option>
+                      <option value="Alexandria">Alexandria</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="City" id="City">
+                      <option value="October6">October 6</option>
+                      <option value="Zamalek">Zamalek</option>
+                      <option value="BolaqEldakror">Bolaq Eldakror</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="SpicalPrice"
+                      id="SpicalPrice"
+                      placeholder="40"
+                    />
+                  </td>
+                </tr>
+              </table>
+              <button>Add other City</button>
             </div>
           </form>
         </DialogContent>
         <DialogActions>
           <Button
+            className="modal-submit"
             variant="contained"
-            color="success"
             autoFocus
             onClick={handleClose}
           >
-            Success
+            Add Trader
           </Button>
         </DialogActions>
       </BootstrapDialog>

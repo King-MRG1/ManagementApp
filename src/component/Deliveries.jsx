@@ -148,9 +148,6 @@ function AddDelivery({ handleClose, isOpen }) {
         aria-labelledby="customized-dialog-title"
         open={isOpen}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Modal title
-        </DialogTitle>
         <IconButton
           aria-label="close"
           onClick={handleClose}
@@ -163,26 +160,158 @@ function AddDelivery({ handleClose, isOpen }) {
         >
           <CloseIcon />
         </IconButton>
+        <DialogTitle
+          sx={{ m: 0, p: 2, fontWeight: "700", fontSize: "20px !important" }}
+          id="customized-dialog-title"
+        >
+          Add New Delivery
+        </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <form action="" className="modalForm">
+            <div>
+              <label htmlFor="FullName">Full Name</label>
+              <input
+                type="text"
+                placeholder="Full Name"
+                name="FullName"
+                id="FullName"
+              />
+            </div>
+            <div>
+              <label htmlFor="Email">Email</label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                name="Email"
+                id="Email"
+              />
+            </div>
+            <div>
+              <label htmlFor="Phone">Phone</label>
+              <input
+                type="number"
+                placeholder="0112165465"
+                name="Phone"
+                id="Phone"
+              />
+            </div>
+            <div>
+              <label htmlFor="Password">Password</label>
+              <input type="password" name="Password" id="Password" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+                width: "100%",
+              }}
+            >
+              <label htmlFor="ServicedBranches">
+                Serviced Branches(can choose more than one)
+              </label>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  flexWrap: "wrap",
+                  marginTop: "6px",
+                  justifyContent: "start",
+                  width: "100%",
+                }}
+              >
+                <label htmlFor="Cairo" className="label-checkbox-branch">
+                  <input
+                    type="checkBox"
+                    name="CairoBranch"
+                    className="checkbox-branch"
+                    id="Cairo"
+                  />
+                  Cairo
+                </label>
+                <label htmlFor="Giza" className="label-checkbox-branch">
+                  <input
+                    type="checkBox"
+                    name="GizaBranches"
+                    className="checkbox-branch"
+                    id="Giza"
+                  />
+                  Giza
+                </label>
+                <label htmlFor="Alexandria" className="label-checkbox-branch">
+                  <input
+                    type="checkBox"
+                    name="AlexandriaBranch"
+                    className="checkbox-branch"
+                    id="Alexandria"
+                  />
+                  Alexandria
+                </label>
+                <label htmlFor="Elfayom" className="label-checkbox-branch">
+                  <input
+                    type="checkBox"
+                    name="ElfayomBranch"
+                    className="checkbox-branch"
+                    id="Elfayom"
+                  />
+                  Elfayom
+                </label>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="CompanyPercentage">Company Percentage</label>
+              <input
+                type="number"
+                name="CompanyPercentage"
+                id="CompanyPercentage"
+                placeholder="60"
+              />
+            </div>
+            <div>
+              <label htmlFor="DeliveryPercentage">Delivery Percentage</label>
+              <input
+                type="text"
+                name="DeliveryPercentage"
+                id="DeliveryPercentage"
+                placeholder="40"
+                readOnly
+              />
+            </div>
+            <div>
+              <label htmlFor="ComissionType">Comission Type</label>
+              <select name="ComissionType" id="ComissionType">
+                <option value="October6">October 6</option>
+                <option value="Zamalek">Zamalek</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="VicaleNumber">Vicale Number</label>
+              <input
+                type="text"
+                placeholder="212saw"
+                name="VicaleNumber"
+                id="VicaleNumber"
+              />
+            </div>
+            <div style={{ width: "100%" }}>
+              <label htmlFor="Address">Address</label>
+              <input
+                type="text"
+                placeholder="Address"
+                name="Address"
+                id="Address"
+              />
+            </div>
+          </form>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
+          <Button
+            className="modal-submit"
+            variant="contained"
+            autoFocus
+            onClick={handleClose}
+          >
+            Add Delivery
           </Button>
         </DialogActions>
       </BootstrapDialog>

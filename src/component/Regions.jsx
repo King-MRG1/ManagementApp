@@ -140,9 +140,6 @@ function AddRegion({ handleClose, isOpen }) {
         aria-labelledby="customized-dialog-title"
         open={isOpen}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Modal title
-        </DialogTitle>
         <IconButton
           aria-label="close"
           onClick={handleClose}
@@ -155,26 +152,58 @@ function AddRegion({ handleClose, isOpen }) {
         >
           <CloseIcon />
         </IconButton>
+        <DialogTitle
+          sx={{ m: 0, p: 2, fontWeight: "700", fontSize: "20px !important" }}
+          id="customized-dialog-title"
+        >
+          Add New Region
+        </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <form action="" className="modalForm">
+            <div style={{ width: "100%" }}>
+              <select name="Governorate" id="Governorate">
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alexandria">Alexandria</option>
+              </select>
+            </div>
+            <div style={{ width: "100%" }}>
+              <label htmlFor="City">City</label>
+              <input
+                type="text"
+                placeholder="New Capital"
+                name="City"
+                id="City"
+              />
+            </div>
+            <div>
+              <label htmlFor="ShippingFees">Shipping Fees</label>
+              <input
+                type="number"
+                placeholder="60"
+                name="ShippingFee"
+                id="ShippingFee"
+              />
+            </div>
+            <div>
+              <label htmlFor="DeliveryFee">Delivery Fee</label>
+              <input
+                type="number"
+                placeholder="40"
+                name="DeliveryFee"
+                id="DeliveryFee"
+              />
+            </div>
+          </form>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
+          <Button
+            className="modal-submit"
+            variant="contained"
+            autoFocus
+            onClick={handleClose}
+          >
+            Add Region
           </Button>
         </DialogActions>
       </BootstrapDialog>

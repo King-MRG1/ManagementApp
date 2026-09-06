@@ -288,8 +288,8 @@ function AddRole({ handleClose, isOpen }) {
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
+          <Button className="modal-submit" autoFocus onClick={handleClose}>
+            Save Role
           </Button>
         </DialogActions>
       </BootstrapDialog>
